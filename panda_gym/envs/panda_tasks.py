@@ -199,7 +199,8 @@ class PandaReachEnv(RobotTaskEnv):
         render_roll: float = 0,
     ) -> None:
         sim = PyBullet(render_mode=render_mode, renderer=renderer)
-        robot = Panda(sim, block_gripper=True, base_position=np.array([-0.6, 0.0, 0.0]), control_type=control_type)
+        print('control type: ', control_type)
+        robot = Panda(sim, block_gripper=True, base_position=np.array([-0.6, 0.0, 0.0]), control_type=control_type) # Used to be [-0.6, 0.0, 0.0]
         task = Reach(sim, reward_type=reward_type, get_ee_position=robot.get_ee_position)
         super().__init__(
             robot,

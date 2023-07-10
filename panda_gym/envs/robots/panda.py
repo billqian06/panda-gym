@@ -43,7 +43,8 @@ class Panda(PyBulletRobot):
 
         self.fingers_indices = np.array([9, 10])
         self.neutral_joint_values = np.array([0.00, 0.41, 0.00, -1.85, 0.00, 2.26, 0.79, 0.00, 0.00])
-        self.ee_link = 11
+        # self.neutral_joint_values = np.array([0.05390002500066961, -0.9658287286106666, -0.07475309783572494, -2.7542662375998344, -0.09927751893858883, 1.9261988955073042, 0.8179344779917355])
+        self.ee_link = 10 # Right finger, about 2 cm lower than physical robot, about 2.5 cm higher than link 11
         self.sim.set_lateral_friction(self.body_name, self.fingers_indices[0], lateral_friction=1.0)
         self.sim.set_lateral_friction(self.body_name, self.fingers_indices[1], lateral_friction=1.0)
         self.sim.set_spinning_friction(self.body_name, self.fingers_indices[0], spinning_friction=0.001)

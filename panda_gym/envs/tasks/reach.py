@@ -19,7 +19,7 @@ class Reach(Task):
         self.reward_type = reward_type
         self.distance_threshold = distance_threshold
         self.get_ee_position = get_ee_position
-        self.goal_range_low = np.array([-goal_range / 2, -goal_range / 2, 0])
+        self.goal_range_low = np.array([-goal_range / 2, -goal_range / 2, 0.03]) # 3cm above the ground instead of 0
         self.goal_range_high = np.array([goal_range / 2, goal_range / 2, goal_range])
         with self.sim.no_rendering():
             self._create_scene()
