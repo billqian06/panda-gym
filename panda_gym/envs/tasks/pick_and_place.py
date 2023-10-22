@@ -20,7 +20,7 @@ class PickAndPlace(Task):
         super().__init__(sim)
         self.reward_type = reward_type
         self.distance_threshold = distance_threshold
-        self.object_size = 0.04
+        self.object_size = 0.035
         self.goal_range_low = np.array([-goal_xy_range / 2, -goal_xy_range / 2, 0])
         self.goal_range_high = np.array([goal_xy_range / 2, goal_xy_range / 2, goal_z_range])
         self.obj_range_low = np.array([-obj_xy_range / 2, -obj_xy_range / 2, 0])
